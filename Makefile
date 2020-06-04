@@ -1,5 +1,5 @@
 resume.pdf: resume.tex resume.cls
-	@pdflatex resume.tex 
+	pdflatex resume.tex >/dev/null
 
 .PHONY = clean
 
