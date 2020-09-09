@@ -79,7 +79,7 @@
 % SECTIONS: Create section headings
 
 % Used to create large resume section
-\newenvironment{rSection}[1]{
+\newenvironment{resumeSection}[1]{
   \sectionskip
   \MakeUppercase{\bf #1}
   \sectionlineskip
@@ -93,7 +93,7 @@
 }
 
 % Used to format job listing
-\newenvironment{rSubsection}[4]{
+\newenvironment{resumeSubsection}[4]{
   %%%%%%%%%%%%%%%%%%%%%% Default Layout: %%%%%%%%%%%%%%%%%%%%%%%%
   %%    Employer (bold)                     Dates (regular)    %%
   %%    Title (emphasis)                Location (emphasis)    %%

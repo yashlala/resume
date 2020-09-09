@@ -1,52 +1,24 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Professional CV
-% LaTeX Template
-% Version 2.0 (8/5/13)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Trey Hunner (http://www.treyhunner.com/)
-%
-% Important note:
-% This template requires the resume.cls file to be in the same directory as the
-% .tex file. The resume.cls file provides the resume style used for structuring the
-% document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \documentclass{resume} % Use the custom resume.cls style
 
 \usepackage[left=0.35in,top=0.35in,right=0.35in,bottom=0.35in]{geometry} % Document margins
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
-\name{Yash Lala} % Your name
-\address{1293 Lennon Way \\ San Jose, CA 95125} % Your address
-\address{(510)-400-5572 \\ yashlala@g.ucla.edu \\ https://github.com/yashlala} % Your phone number and email
+\name{Yash Lala}
+\address{1293 Lennon Way \\ San Jose, CA 95125}
+\address{(510)-400-5572 \\ yashlala@g.ucla.edu \\ https://github.com/yashlala}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
 
-\begin{rSection}{Education}
+\begin{resumeSection}{Education}
 
 UCLA Undergraduate in Computer Science \hfill {GPA: 3.83, 2018 - Present}
 \\ BASIS Independent Silicon Valley High School \hfill {GPA: 3.9, 2014 - 2018}
 % Minor in Linguistics \smallskip \\
+\end{resumeSection}
 
-\end{rSection}
-%----------------------------------------------------------------------------------------
-%	TECHNICAL STRENGTHS SECTION
-%----------------------------------------------------------------------------------------
 
-\begin{rSection}{Technical Strengths}
+\begin{resumeSection}{Technical Strengths}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
 Operating Systems & Strong knowledge of mechanisms behind OS mechanisms \\
@@ -54,56 +26,49 @@ Software \& Tools & GCP, etc. Strong focus on Linux automation/scripting. \\
 Other & 1000+ hours of independent CS/Math/Science reading through online research. 
 \end{tabular}
 
-\end{rSection}
+\end{resumeSection}
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
 
-\begin{rSection}{Work Experience}
+\begin{resumeSection}{Work Experience}
 
-\begin{rSubsection}{Pringle Lab, Stanford Genetics Department}
+\begin{resumeSubsection}{Pringle Lab, Stanford Genetics Department}
 	{June 2017 - August 2017}{Undergraduate Research Intern}{}
 \item Focused on automating lab tasks using software. Worked on developing a
 	microscopic cell recognition+counting program from scratch for use in
 	algal haemocytometry. Program successfully ran through input data
 	efficiently. Final product not ported to existing lab microscopes due
 	to time constraints. 
-\end{rSubsection}
-
-\begin{rSubsection}{Sensagrate Dev Labs}{June 2019 - September 2019}{}{}
+	algal haemocytometry. 
+\end{resumeSubsection}
+\begin{resumeSubsection}{Sensagrate Dev Labs}{June 2019 - September 2019}{}{}
 \item Trained in image-recognition, with a particular focus on using OpenCV for
 	traffic pattern recognition. 
-\end{rSubsection}
+\end{resumeSubsection}
 
-\end{rSection}
-%----------------------------------------------------------------------------------------
-%	INDEPENDENT PROJECTS
-%----------------------------------------------------------------------------------------
+\end{resumeSection}
 
-\begin{rSection}{Independent Projects} \itemsep -2pt
 
-\begin{rSubsection}{bNEAT}{September 2017 - May 2018}{}{}
+\begin{resumeSection}{Independent Projects} \itemsep -2pt
+
+\begin{resumeSubsection}{bNEAT}{September 2017 - May 2018}{}{}
 \item Worked on developing an improved version of the Neuroevolution of
 	Augmenting Topologies algorithm by using subnet recognition to
 	implement software analogues to homeobox genes. Tested the modified
 	algorithm's performance by teaching it to play Super Mario World®.
 	Resulting algorithm runs through the initial learning phase faster than
 	'vanilla' NEAT.
-\end{rSubsection}
-\begin{rSubsection}{Text-recognizing Refreshable Braille Display}
+\end{resumeSubsection}
+\begin{resumeSubsection}{Text-recognizing Refreshable Braille Display}
 	{December 2016 - May 2017}{}{}
 \item Worked on developing an E-Reader for the blind. Used GNU Ocrad to
 	recognize printed text and translate it into Braille dots on a
 	deformable electroactive polymer based 'display'. 
-\end{rSubsection}
+\end{resumeSubsection}
 
-\end{rSection}
+\end{resumeSection}
 
-%----------------------------------------------------------------------------------------
-%	RELEVANT COURSEWORK
-%----------------------------------------------------------------------------------------
-\begin{rSection}{Relevant Coursework}
+
+\begin{resumeSection}{Relevant Coursework}
 
 \itab{\textbf{CS Courses}} \tab{}  
 	\tab{\textbf{Selected Other Courses}}
@@ -116,19 +81,6 @@ Other & 1000+ hours of independent CS/Math/Science reading through online resear
 \\ \itab{Algorithms} \tab{} 
 	\tab{Physics}
 
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	EXTRACURRICULARS
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Extracurriculars} \itemsep -5pt
-
-\item Principal trumpet in the San Jose Youth Philharmonic. Now learning to
-	play bass guitar. 
-\item ACM member, enjoys recreational programming and Free Software. 
-\item Captain of High School Science Bowl team. Gained experience in Math, CS, Physics. 
-\item Enjoys bouldering and climbing. Particularly skilled at falling. 
-\end{rSection}
+\end{resumeSection}
 
 \end{document}
