@@ -7,7 +7,7 @@ resume.pdf: resume.tex resume.cls
 
 .PHONY = export
 export: resume.pdf
-	cp resume.pdf ~/io/resume.pdf
+	cp resume.pdf ~/io/yash-lala-resume.pdf
 
 .PHONY = clean
 clean: 
