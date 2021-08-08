@@ -2,7 +2,6 @@
 
 resume.pdf: resume.tex resume.cls
 	latexmk resume.tex -quiet -silent -pdf
-	latexmk resume.tex -quiet -silent -c
 
 
 .PHONY = export
@@ -11,4 +10,5 @@ export: resume.pdf
 
 .PHONY = clean
 clean: 
+	latexmk resume.tex -quiet -silent -c
 	rm resume.pdf
