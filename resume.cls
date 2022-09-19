@@ -14,7 +14,7 @@
 
 \ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
 
-\LoadClass[11pt,letterpaper]{article}
+\LoadClass[10pt,letterpaper]{article}
 
 \usepackage[parfill]{parskip}       % Do not indent paragraphs
 \usepackage{array}                  % required for boldface tabular columns
@@ -29,7 +29,7 @@
 \def \name#1{\def\@name{#1}}        % \name command can be used to set name
 \def \@name {}                      % Set \@name to empty by default
 
-\def \addressSep {$\diamond$}         % Set default address seperator
+\def \addressSep {\thickspace $\diamond$ \thickspace}         % Set default address seperator
 
 % One or two address lines can be specified 
 \let \@addressone \relax
@@ -80,7 +80,6 @@
 
 % Used to create large resume section
 \newenvironment{resumeSection}[1]{
-  \sectionskip
   \MakeUppercase{\bf #1}
   \sectionlineskip
   \hrule
@@ -105,10 +104,9 @@
   }\smallskip
   % \cdot used for bullets, items non-indented
   \begin{list}{$\cdot$}{\leftmargin=0em}
-  \itemsep -0.5em \vspace{-0.5em}
+  \itemsep -0.5em \vspace{-0.7em}
 }{
   \end{list}
-  \vspace{0.5em}
 }
 
 \def\namesize{\huge}

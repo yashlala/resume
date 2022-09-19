@@ -4,13 +4,30 @@
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \usepackage{titlesec}
+
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue, 
+	urlcolor=cyan,
+}
+\urlstyle{same}
+
+
+
 \titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{6pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{6pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 
 \name{Yash Lala}
-\address{Palo Alto, CA}
-\address{(510)-400-5572 \\ yashlala@ucla.edu \\ https://yashlala.com/}
+\address{(510)-400-5572 \\ 
+	\href{mailto://yashlala@ucla.edu/}{yashlala@ucla.edu} \\
+	Palo Alto, CA}
+\address{\href{https://yashlala.com/}{yashlala.com} \\ 
+	\href{https://github.com/yashlala}{github.com/yashlala} \\ 
+	\href{https://linkedin.com/in/yashlala}{linkedin.com/in/yashlala}}
 
 \showboxdepth=\maxdimen
 \showboxbreadth=\maxdimen
@@ -20,79 +37,107 @@
 \begin{resumeSection}{Education}
 
 UCLA B.S. in Computer Science
-	\hfill {GPA: 3.782, 2018 - 2022} \\
+	\hfill GPA: 3.782, 2018 - 2022 \\
 BASIS Independent Silicon Valley High School
-	\hfill {GPA: 3.9, 2014 - 2018}
+	\hfill GPA: 3.9, 2014 - 2018
 
 \end{resumeSection}
-
 
 \begin{resumeSection}{Technical Skills}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Computer Languages &  C, Python, Shell, Java, Go, C++, OCaml, SQL. \\
-Software \& Tools & Ansible, Git, GCP, etc. Strong focus on kernel development
-and debugging. 
+Programming Languages &  C, Python, Unix shells, Java, Go, C++, OCaml, SQL \\
+Software \& Tools & QEMU + GDB, Linux kernel debugging, Docker, Ansible, PyTorch, Git, AWS, LaTeX
 \end{tabular}
 
 \end{resumeSection}
 
 
-\begin{resumeSection}{Professional Experience} \itemsep -10pt
+\begin{resumeSection}{Professional Experience} \itemsep -12pt
+
+\begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
+	{Sept 2021 - Present}{Student Researcher}{Supervisor: Prof. Harry Xu}
+\item Volunteered during the school year, employed full-time to work on kernel
+	patches over the summer. Focused on developing OS kernel mechanisms to
+	allow for transparent memory disaggregation. Worked heavily with kernel
+	programming and debugging tools, such as \textbf{QEMU} + \textbf{GDB},
+	serial port debugging, and \textbf{perf}. 
+\item Independently developed patches for the Linux kernel's swap subsystems,
+	with the goal of merging these changes upstream. Patchset extends the
+	cpuset controller to allow per-cgroup control of active swap devices.
+	Associated refactoring has positive implications for swap throughput,
+	and makes it easy to develop frontswap-based remote memory systems. \\
+	Code at 
+	\href{https://github.com/yashlala/canvas-linux}{github.com/yashlala/canvas-linux}.
+\item Developed a patchset to improve the Linux kernel's physical page
+	allocation latency. The patch reduces tail latencies by refilling the
+	percpu low-order free page lists asynchronously using RCU. 
+\item Profiled swapout latencies for RDMA-based remote memory systems under
+	various workloads and prefetch strategies. 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{Veritas Technologies LLC}
+	{June 2021 - Sept 2021}{SDE Intern}{}
+\item Worked on large-scale data consolidation and backup devices (NetBackup
+	Flex platform). 
+\item Implemented functionality allowing Flex nodes to automatically discover
+	new backup nodes over the datacenter network, then to securely
+	assimilate them into a backup cluster. Primarily worked with
+	\textbf{Ansible}, \textbf{Docker}, and various glue languages. 
+\item Replaced SSH-based inter-node communication protocols with a RESTy HTTP
+	based protocol. 
+\item Added web dashboard for backup cluster management. 
+\end{resumeSubsection}
 
 \begin{resumeSubsection}{Pringle Lab, Stanford Genetics Department}
 	{June 2017 - August 2017}{Undergraduate Research Intern}{}
-\item Tested for selective lectin protein binding to various algal species,
-	in order to understand the chemical processes behind coral bleaching. 
-	Developed a microscopic cell image recognition+counting program for
-	use in algal haemocytometry.
-\end{resumeSubsection}
-\begin{resumeSubsection}{Veritas Technologies LLC}
-	{June 2021 - Sept 2021}{SDE Intern}{}
-\item Worked on NetBackup Flex platform. Team tasked with implementing
-	automatic compute node discovery and assimilation over a network.
-	Replaced session-based internode communication scheme to an
-	Ansible+HTTP based setup; replaced product-specific software components
-	with platform-agnostic versions. 
-\end{resumeSubsection}
-\begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
-	{June 2022 - Present}{Student Researcher}{}
-\item Independently developed patches for the Linux kernel's swap subsystems,
-	with the goal of merging these changes upstream. The patchset allows
-	for per-cgroup control of active swap devices. The changes have
-	positive implications for swap throughput -- but more importantly, they
-	make it easy to develop and control frontswap-based remote memory
-	systems.
-\item Prior to full-time employment: profiled swapout latencies for RDMA-based
-	remote memory systems under various workloads and prefetch strategies.
-	Worked on improving the Linux kernel's physical memory page allocation
-	latency via asynchronous RCU-based refill of the per-cpu page lists. 
+\item Tested algal species for selective binding to various lectin proteins in
+	order to understand the chemical processes behind coral bleaching.
+	Poster available at
+	\href{https://yashlala.com/pringle-poster.pdf}{yashlala.com/pringle-poster.pdf}. 
+\item Developed an image recognition program in \textbf{Java} for use in
+	algal cell haemocytometry.
 \end{resumeSubsection}
 
 \end{resumeSection}
 
+
 \begin{resumeSection}{Projects} \itemsep -10pt
 
-\begin{resumeSubsection}{bNEAT}{September 2017 - May 2018}{}{}
-\item Worked on developing an improved version of the Neuroevolution of
-	Augmenting Topologies algorithm by recognizing and cloning distinct
-	neural "subnets". Resulting algorithm runs through the initial learning
-	phase faster than 'vanilla' NEAT.
+\begin{resumeSubsection}
+	{$\text{SC-DNN}_{cc}$: A Compiler for Stochastic-Computing Accelerators}
+	{May 2021 - June 2021}{}{}
+\item Developed a compiler backend that transforms programs written in
+	conventional IRs into forms that can be run on a stochastic-computing
+	based hardware accelerator (stochastic accelerators have unusual
+	probability-based programming semantics, and can be difficult to
+	program). Developed an interpreter in \textbf{Java} to emulate a
+	stochastic accelerator with a limited set of stochastic primitive
+	operations. 
 \end{resumeSubsection}
+
+\begin{resumeSubsection}{NDN Multicast}{May 2021-Present}{}{}
+\item Worked on extending routing protocols for NDN (Named Data Networks). 
+	Extended NLSR (a link-state routing algorithm for NDN) to allow for
+	efficient multicast delivery of NDN Interest packets. Worked primarily
+	in \textbf{C++}, Student paper submitted to ICN 2022. 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{GRU4RecBE: Session Based Recommendations with Features}
+	{March 2021 - June 2021}{}{}
+\item Developed session-based recommendation system in \textbf{PyTorch} which
+	extends the GRU4REC architecture with rich item features extracted from
+	the pre-trained BERT architecture. Non-attentive model outperforms
+	state-of-the-art session-based models over the benchmark MovieLens 1M
+	and MovieLens 20M datasets. Paper accepted to AAAI Student track. 
+\end{resumeSubsection}
+
 \begin{resumeSubsection}{Junknet: Distributed Compilation Framework}
 	{January 2021 - March 2021}{}{}
 \item Worked on developing a distributed computing framework for a home
-	environment. Project analyzes Makefiles and runs them in a distributed
+	environment. Project parses Makefiles and runs them in a distributed
 	manner over available LAN devices. Network and device failures are
 	tolerated.
-\end{resumeSubsection}
-\begin{resumeSubsection}{GRU4RecBE: Session Based Recommendations with Features}
-	{March 2021 - June 2021}{}{}
-\item Developed session-based recommendation system which extends the GRU4REC
-	architecture with rich item features extracted from the pre-trained
-	BERT architecture. Non-attentive model outperforms state-of-the-art
-	session-based models over the benchmark MovieLens 1M and MovieLens 20M
-	datasets. Paper accepted to AAAI Student track. 
 \end{resumeSubsection}
 
 \end{resumeSection}
