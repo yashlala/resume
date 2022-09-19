@@ -5,7 +5,7 @@ resume.pdf: resume.tex resume.cls
 
 .PHONY = deploy
 deploy: resume.pdf
-	cp resume ~/code/yashlala.com/static/yash-lala-resume.pdf
+	cp resume.pdf ~/code/yashlala.com/static/yash-lala-resume.pdf
 	~/code/yashlala.com/deploy.sh
 
 .PHONY = export
