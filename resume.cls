@@ -57,7 +57,7 @@
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
-    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
+    \hfil{\MakeUppercase{\textbf{\namesize \@name}}}\hfil
     \nameskip\break
   \endgroup
 }
@@ -80,7 +80,7 @@
 
 % Used to create large resume section
 \newenvironment{resumeSection}[1]{
-  \MakeUppercase{\bf #1}
+  \MakeUppercase{\textbf{#1}}
   \sectionlineskip
   \hrule
   \begin{list}{}{
@@ -97,7 +97,7 @@
   %%    Employer (bold)                     Dates (regular)    %%
   %%    Title (emphasis)                Location (emphasis)    %%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  {\bf #1}                 \hfill                  {    #2}% Stop a space
+  {\textbf{#1}}                 \hfill                  {    #2}% Stop a space
   \ifthenelse{\equal{#3}{}}{}{
   \\
   {\em #3}                 \hfill                  {\em #4}% Stop a space
