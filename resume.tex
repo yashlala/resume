@@ -43,20 +43,32 @@ UCLA B.S. in Computer Science
 
 \begin{resumeSection}{Professional Experience} \itemsep -12pt
 
+\begin{resumeSubsection}{Khandelwal Lab, Yale CS Department}
+	{Aug 2023 - Present}{PhD Student}{Supervisor: Prof. Anurag Khandelwal}
+\item Currently researching performance limitations in kernel-based
+	RDMA and CXL disaggregated memory runtimes. Publication ongoing.
+\item Developed extensive knowledge of the the Linux kernel's memory
+	management, RDMA, page placement, and swap subsystems.
+	Particular focus on optimizing high throughput, low-latency runtimes,
+	such as memory migration systems and RDMA SmartNIC network stacks.
+	Comfortable working at the hardware-software interface.
+\end{resumeSubsection}
+
 \begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
 	{Sept 2021 - Sept 2022}{Student Researcher}{Supervisor: Prof. Harry Xu}
 \item Volunteered during the school year, employed full-time to work on kernel
-	patches over the summer. Focused on developing OS kernel mechanisms to
+	patches over the summer. Developed kernel mechanisms to
+	facilitate
 	allow for transparent memory disaggregation. Worked heavily with kernel
 	programming and debugging tools, such as QEMU + GDB, serial port
 	debugging, and perf. 
 \item Independently developed patches for the Linux kernel's swap subsystems,
-	with the goal of \textbf{merging these changes upstream}. Patchset
+	with the goal of merging these changes upstream. Patchset
 	extends the cpuset controller to allow per-cgroup control of active
 	swap devices. Associated refactoring has positive implications for swap
 	throughput, and makes it easy to manage frontswap-based remote memory
 	systems. \\
-	Code at 
+	Patchset available at
 	\href{https://github.com/yashlala/canvas-linux}{github.com/yashlala/canvas-linux}.
 \item Developed a patchset to improve the Linux kernel's physical page
 	allocation latency. The patch reduces tail latencies by refilling the
@@ -68,22 +80,17 @@ UCLA B.S. in Computer Science
 \begin{resumeSubsection}{CSSI Program, UCLA CS Department}
 	{July 2022}{Tutor Undergrad (TA)}{}
 \item Taught introductory data science to high school students for an intensive
-	summer program. Led 4 hours of discussion section and office hours per
-	day, prepared discussion material and assignments, graded papers, and
-	advised students. 
+	summer program. Led discussion sections, prepared discussion material
+	and assignments, graded papers, and advised students. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{Veritas Technologies LLC}
 	{June 2021 - Sept 2021}{SDE Intern}{}
 \item Worked on large-scale data consolidation and backup devices (NetBackup
-	Flex platform). 
-\item Implemented functionality allowing Flex nodes to automatically discover
+	Flex platform). Implemented functionality allowing Flex nodes to automatically discover
 	new backup nodes over the datacenter network, then to securely
 	assimilate them into a backup cluster. Primarily worked with
 	Ansible, Docker, and various glue languages. 
-\item Replaced SSH-based inter-node communication protocols with a RESTy HTTP
-	based protocol. 
-\item Added web dashboard for backup cluster management. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{Pringle Lab, Stanford Genetics Department}
@@ -92,26 +99,11 @@ UCLA B.S. in Computer Science
 	order to understand the chemical processes behind coral bleaching.
 	Poster available at
 	\href{https://yashlala.com/pringle-poster.pdf}{yashlala.com/pringle-poster.pdf}. 
-\item Developed an image recognition program in Java for use in
-	algal cell haemocytometry.
 \end{resumeSubsection}
 
 \end{resumeSection}
 
-
 \begin{resumeSection}{Projects} \itemsep -10pt
-
-\begin{resumeSubsection}
-	{$\text{SC-DNN}_{cc}$: A Compiler for Stochastic-Computing Accelerators}
-	{May 2022 - June 2022}{}{}
-\item Developed a compiler backend that transforms programs written in
-	conventional IRs into forms that can be run on a stochastic-computing
-	based hardware accelerator (stochastic accelerators have unusual
-	probability-based programming semantics, and can be difficult to
-	program). Developed a configurable interpreter to emulate 
-	stochastic accelerators with a limited set of primitive stochastic
-	operations. 
-\end{resumeSubsection}
 
 \begin{resumeSubsection}{NDN Multicast}{May 2022 - Present}{}{}
 \item Worked on extending routing protocols for NDN (Named Data Networks). 
@@ -123,7 +115,7 @@ UCLA B.S. in Computer Science
 
 \begin{resumeSubsection}{GRU4RecBE: Session Based Recommendations with Features}
 	{March 2021 - June 2021}{}{}
-\item Developed session-based recommendation system in \textbf{PyTorch} which
+\item Developed session-based recommendation system in PyTorch which
 	extends the GRU4REC architecture with rich item features extracted from
 	the pre-trained BERT architecture. Non-attentive model outperforms
 	state-of-the-art session-based models over the benchmark MovieLens 1M
@@ -134,16 +126,13 @@ UCLA B.S. in Computer Science
 
 \end{resumeSection}
 
-
 \begin{resumeSection}{Miscellaneous}
 	Passionate about teaching: led student 
 	\href{https://yashlala.com/binary-search-club/}{seminar series}, 
-	volunteered with \href{https://teachla.uclaacm.com/}{ACM TeachLA}, 
-	and currently volunteering as a docent for the 
+	volunteered with \href{https://teachla.uclaacm.com/}{ACM
+	TeachLA} and as a docent for the 
 	\href{https://computerhistory.org/}{Computer History Museum}. 
-	I'm also interested in retro computing, and am trained as a operator
-	for the \href{https://en.wikipedia.org/wiki/IBM_1401}{IBM 1401}. 
+	Certified as a operator for the punch-card based \href{https://en.wikipedia.org/wiki/IBM_1401}{IBM 1401}.
 \end{resumeSection}
-
 
 \end{document}
