@@ -43,23 +43,34 @@ UCLA B.S. in Computer Science
 
 \begin{resumeSection}{Professional Experience} \itemsep -12pt
 
-\begin{resumeSubsection}{Khandelwal Lab, Yale CS Department}
-	{Aug 2023 - Present}{PhD Student}{Supervisor: Prof. Anurag Khandelwal}
-\item Currently researching performance limitations in kernel-based
-	RDMA and CXL disaggregated memory runtimes. Publication ongoing.
-\item Developed extensive knowledge of the the Linux kernel's memory
-	management, RDMA, page placement, and swap subsystems.
+\begin{resumeSubsection}{NOVA Lab, Yale CS Department}
+	{Aug 2023 - Present}{PhD Student}{Advisor: Anurag Khandelwal}
+\item Researching techniques for accelerating OS memory migration. 
+      Project aims to facilitate high-throughput RDMA-based far memory 
+	  runtimes. Developed extensive knowledge of the the Linux kernel's memory
+	management, RDMA, page placement, IPI, and swap subsystems.
 	Particular focus on optimizing high throughput, low-latency runtimes,
 	such as memory migration systems and RDMA SmartNIC network stacks.
-	Comfortable working at the hardware-software interface.
+	Publication to appear at \textbf{SOSP '25}. 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{NVIDIA}
+	{May 2025 - Aug 2025}{Systems Software Intern}{Advisor: Pasha Shamis}
+\item Developed network performance models for Mixture-of-Experts (MoE)
+	communication phases in ML models. 
+	Conducted performance analysis of existing MoE library implementations
+	(such as NCCL, DeepEP, etc), then optimized the libraries for NVIDIA's
+	cluster hardware. 
+	Gained experience with LLM workload network traffic patterns,  
+	GPU performance debugging (particularly with regards to GPU-initiated RDMA
+	network communication). 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
-	{Sept 2021 - Sept 2022}{Student Researcher}{Supervisor: Prof. Harry Xu}
+	{Sept 2021 - Sept 2022}{Student Researcher}{Supervisor: Harry Xu}
 \item Volunteered during the school year, employed full-time to work on kernel
-	patches over the summer. Developed kernel mechanisms to
-	facilitate
-	allow for transparent memory disaggregation. Worked heavily with kernel
+	patches over the summer. Developed kernel mechanisms for
+	for transparent memory disaggregation. Worked heavily with kernel
 	programming and debugging tools, such as QEMU + GDB, serial port
 	debugging, and perf. 
 \item Independently developed patches for the Linux kernel's swap subsystems,
@@ -73,8 +84,6 @@ UCLA B.S. in Computer Science
 \item Developed a patchset to improve the Linux kernel's physical page
 	allocation latency. The patch reduces tail latencies by refilling the
 	percpu low-order free page lists asynchronously using RCU. 
-\item Profiled swapout latencies for RDMA-based remote memory systems under
-	various workloads and prefetch strategies. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{CSSI Program, UCLA CS Department}
@@ -93,17 +102,14 @@ UCLA B.S. in Computer Science
 	Ansible, Docker, and various glue languages. 
 \end{resumeSubsection}
 
-\begin{resumeSubsection}{Pringle Lab, Stanford Genetics Department}
-	{June 2017 - August 2017}{Undergraduate Research Intern}{}
-\item Tested algal species for selective binding to various lectin proteins in
-	order to understand the chemical processes behind coral bleaching.
-	Poster available at
-	\href{https://yashlala.com/pringle-poster.pdf}{yashlala.com/pringle-poster.pdf}. 
-\end{resumeSubsection}
-
 \end{resumeSection}
 
 \begin{resumeSection}{Projects} \itemsep -10pt
+
+\begin{resumeSubsection}{Scalable Far Memory: Balancing Faults and Evictions}
+	{August 2023 - August 2025}{}{}
+\item Paper to appear at \textbf{SOSP 2025}. 
+\end{resumeSubsection}
 
 \begin{resumeSubsection}{NDN Multicast}{May 2022 - Present}{}{}
 \item Worked on extending routing protocols for NDN (Named Data Networks). 
@@ -127,7 +133,7 @@ UCLA B.S. in Computer Science
 \end{resumeSection}
 
 \begin{resumeSection}{Miscellaneous}
-	Passionate about teaching: led student 
+	Enjoys teaching: led student 
 	\href{https://yashlala.com/binary-search-club/}{seminar series}, 
 	volunteered with \href{https://teachla.uclaacm.com/}{ACM
 	TeachLA} and as a docent for the 
