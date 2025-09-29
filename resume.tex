@@ -29,6 +29,10 @@
 
 \begin{document}
 
+%\begin{resumeSection}{Research Goals and Skillset}
+	%yeah
+%\end{resumeSection}
+
 \begin{resumeSection}{Education}
 
 Yale Ph.D. in Computer Science\hfill 2023 - Present \\
@@ -38,7 +42,7 @@ UCLA B.S. in Computer Science
 \end{resumeSection}
 
 
-\begin{resumeSection}{Professional Experience} \itemsep -12pt
+\begin{resumeSection}{Professional Experience}
 
 \begin{resumeSubsection}{NOVA Lab, Yale CS Department}
 	{Aug 2023 - Present}{PhD Student}{Advisor: Anurag Khandelwal}
@@ -55,9 +59,10 @@ UCLA B.S. in Computer Science
 	{May 2025 - Aug 2025}{Systems Software Intern}{Supervisor: Pasha Shamis}
 \item Developed network performance models for Mixture-of-Experts (MoE)
 	communication phases in ML models. 
-	Conducted performance analysis of existing MoE library implementations
+\item Conducted performance analysis of existing MoE library implementations
 	(such as NCCL, DeepEP, etc), then optimized the libraries for NVIDIA's
-	cluster hardware. 
+	GB200 cluster hardware. 
+\item 
 	Gained experience with LLM workload network traffic patterns,  
 	GPU performance debugging (particularly with regards to GPU-initiated RDMA
 	network communication). 
@@ -85,46 +90,47 @@ UCLA B.S. in Computer Science
 
 \begin{resumeSubsection}{CSSI Program, UCLA CS Department}
 	{July 2022}{Tutor Undergrad (TA)}{}
-\item Taught introductory data science to high school students for an intensive
-	summer program. Led discussion sections, prepared discussion material
-	and assignments, graded papers, and advised students. 
+\item Taught introductory data science to high school students. 
+	Led discussion sections, prepared assignments, graded papers, and advised students. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{Veritas Technologies LLC}
 	{June 2021 - Sept 2021}{SDE Intern}{}
-\item Worked on large-scale data consolidation and backup devices (NetBackup
-	Flex platform). Implemented functionality allowing Flex nodes to automatically discover
-	new backup nodes over the datacenter network, then to securely
-	assimilate them into a backup cluster. Primarily worked with
-	Ansible, Docker, and various glue languages. 
+\item Worked on NetBackup Flex, a platform for large-scale data consolidation and backup. 
+	Implemented automatic node discovery and cluster assimilation over datacenter networks. 
+	Primarily worked with Ansible, Docker, and various glue languages. 
 \end{resumeSubsection}
 
 \end{resumeSection}
 
-\begin{resumeSection}{Projects} \itemsep -10pt
 
+\begin{resumeSection}{Publications}
+	
 \begin{resumeSubsection}{Scalable Far Memory: Balancing Faults and Evictions}
 	{August 2023 - August 2025}{}{}
-\item Paper to appear at \textbf{SOSP 2025}. 
-\end{resumeSubsection}
-
-\begin{resumeSubsection}{NDN Multicast}{Feb 2022 - June 2022}{}{}
-\item Worked on extending routing protocols for NDN (Named Data Networks). 
-	Extended NLSR (a link-state routing algorithm for NDN) to allow for
-	efficient multicast delivery of NDN Interest packets. 
-	Student paper available at 
-	\href{https://yashlala.com/nlsr-poster.pdf}{yashlala.com/nlsr-poster.pdf}. 
+\item Co-first author. Paper to appear at \textbf{SOSP 2025}. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{GRU4RecBE: Session Based Recommendations with Features}
 	{March 2021 - June 2021}{}{}
-\item Developed session-based recommendation system in PyTorch which
+\item Developed session-based recommendation system in \emph{PyTorch} which
 	extends the GRU4REC architecture with rich item features extracted from
 	the pre-trained BERT architecture. Non-attentive model outperforms
-	state-of-the-art session-based models over the benchmark MovieLens 1M
-	and MovieLens 20M datasets.
+	state-of-the-art session-based models over the MovieLens benchmark datasets.
 	\href{https://ojs.aaai.org/index.php/AAAI/article/view/21651/21400}{Paper}
 	\textbf{accepted to AAAI Student track}.
+\end{resumeSubsection}
+
+\end{resumeSection}
+
+\begin{resumeSection}{Projects}
+
+\begin{resumeSubsection}{NDN Multicast}{Feb 2022 - June 2022}{}{}
+\item Extended routing protocols for NDN (Named Data Network) under Lixia Zhang. 
+	Extended NLSR (a link-state routing algorithm for NDN) to allow for
+	efficient multicast delivery of NDN Interest packets. 
+	Student paper available at 
+	\href{https://yashlala.com/nlsr-poster.pdf}{yashlala.com/nlsr-poster.pdf}. 
 \end{resumeSubsection}
 
 \end{resumeSection}
@@ -135,7 +141,7 @@ UCLA B.S. in Computer Science
 	volunteered with \href{https://teachla.uclaacm.com/}{ACM
 	TeachLA} and as a docent for the 
 	\href{https://computerhistory.org/}{Computer History Museum}. 
-	Certified as a operator for the punch-card based \href{https://en.wikipedia.org/wiki/IBM_1401}{IBM 1401}.
+	Certified as a operator for the punched-card based \href{https://en.wikipedia.org/wiki/IBM_1401}{IBM 1401}.
 \end{resumeSection}
 
 \end{document}
