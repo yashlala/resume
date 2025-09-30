@@ -29,63 +29,87 @@
 
 \begin{document}
 
-%\begin{resumeSection}{Research Goals and Skillset}
-	%yeah
-%\end{resumeSection}
+\begin{resumeSection}{Overview}
+
+I am a PhD student, broadly interested in systems for efficient data-center scale computing. 
+My recent work focuses on far-memory systems. 
+
+I have 4+ years of kernel programming expertise, including large-scale projects
+such as reimplementing the reimplementing the memory-management subsystem in my
+most recent publication (SOSP '25). 
+I have demonstrated expertise in developing high-throughput, low-latency kernel datapaths ---
+such as a Linux-based system capable of migrating 200 Gib/s of memory at
+\textless 270 ns per page per core. 
+I'm deeply familiar with CPU microarchitecture and its interactions with the OS, 
+and I excel in principled, data-driven, bottleneck analyses. 
+
+In addition to classical OS + networking, 
+
+
+I'm expanding my knowledge to topics other than classical OS+networking. 
+Such as GPU
+
+
+I am now expanding away from classical OS + networking topics and towards cluster-scale optimizations. 
+I've recently increased scope to cluster-scale optimizations, especially for AI/ML systems. 
+After a summer performance modelling ML network workloads at NVIDIA, I have 
+
+
+\end{resumeSection}
 
 \begin{resumeSection}{Education}
 
 Yale Ph.D. in Computer Science\hfill 2023 - Present \\
-UCLA B.S. in Computer Science
-	\hfill GPA: 3.782, 2018 - 2022
+UCLA B.S. in Computer Science\hfill GPA: 3.782, 2018 - 2022
 
 \end{resumeSection}
-
 
 \begin{resumeSection}{Professional Experience}
 
 \begin{resumeSubsection}{NOVA Lab, Yale CS Department}
-	{Aug 2023 - Present}{PhD Student}{Advisor: Anurag Khandelwal}
-\item Researching techniques for accelerating OS memory migration. 
-      Project aims to facilitate high-throughput RDMA-based far memory 
-	  runtimes. Developed extensive knowledge of the the Linux kernel's memory
+	{Aug 2023 - Expected 2028}{PhD Student}{Advisor: Anurag Khandelwal}
+\item Broadly researching systems for efficient data-center scale computing.
+	Recent work focuses on far-memory systems.
+\item Developed techniques for accelerating OS memory migration, aimed towards
+	facilitating high-throughput RDMA-based far memory runtimes.
+	Developed extensive knowledge of the the Linux kernel's memory
 	management, RDMA, page placement, IPI, and swap subsystems.
-	Particular focus on optimizing high throughput, low-latency runtimes,
+	My particular focus was on optimizing high throughput, low-latency runtimes,
 	such as memory migration systems and RDMA SmartNIC network stacks.
 	Publication to appear at \textbf{SOSP '25}. 
+\item Developing compact data structures for efficient range queries in
+	high-dimensional spaces. Ongoing project. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{NVIDIA}
-	{May 2025 - Aug 2025}{Systems Software Intern}{Supervisor: Pasha Shamis}
-\item Developed network performance models for Mixture-of-Experts (MoE)
-	communication phases in ML models. 
-\item Conducted performance analysis of existing MoE library implementations
-	(such as NCCL, DeepEP, etc), then optimized the libraries for NVIDIA's
-	GB200 cluster hardware. 
-\item 
-	Gained experience with LLM workload network traffic patterns,  
-	GPU performance debugging (particularly with regards to GPU-initiated RDMA
+	{May 2025 - Aug 2025}{Systems Software Intern}{Supervisor: Misha Smelyanskiy}
+\item Developed performance models for Mixture-of-Experts (MoE)
+	communication phases for AI/ML models on NVIDIA's GB200 cluster hardware. 
+	Estimated ROI for future communication optimizations, and localized
+	network performance bottlenecks in distributed systems of GPUs. 
+\item Examined MoE token to expert mapping distributions to quantify the workload changes
+	required for optimal hardware utilization. Explored algorithm-network codesign opportunities. 
+\item Profiled existing GPU MoE library implementations (such as NCCL, DeepEP, etc).
+	Optimized GPU MoE libraries for NVIDIA hardware by better utilizing tiered
+	Multi-Node NVLink and Infiniband datacenter networks. 
+\item Gained experience with LLM workload network traffic patterns and 
+	GPU performance debugging (particularly in GPU-initiated RDMA
 	network communication). 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
 	{Sept 2021 - Sept 2022}{Student Researcher}{Supervisor: Harry Xu}
-\item Volunteered during the school year, employed full-time to work on kernel
-	patches over the summer. Developed kernel mechanisms for
-	for transparent memory disaggregation. Worked heavily with kernel
-	programming and debugging tools, such as QEMU + GDB, serial port
-	debugging, and perf. 
-\item Independently developed patches for the Linux kernel's swap subsystems,
-	with the goal of merging these changes upstream. Patchset
-	extends the cpuset controller to allow per-cgroup control of active
-	swap devices. Associated refactoring has positive implications for swap
-	throughput, and makes it easy to manage frontswap-based remote memory
-	systems. \\
+\item Developed Linux kernel mechanisms for transparent far memory, 
+	with the goal of merging my changes upstream. 
+	The patchset extends the cpuset controller to allow per-cgroup control of
+	active swap devices. The associated refactoring has positive implications
+	for swap throughput, and makes it easy to manage frontswap-based remote
+	memory systems. \\
 	Patchset available at
 	\href{https://github.com/yashlala/canvas-linux}{github.com/yashlala/canvas-linux}.
 \item Developed a patchset to improve the Linux kernel's physical page
-	allocation latency. The patch reduces tail latencies by refilling the
-	percpu low-order free page lists asynchronously using RCU. 
+	allocation tail latencies by refilling the percpu low-order free page lists
+	asynchronously using RCU. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{CSSI Program, UCLA CS Department}
@@ -108,12 +132,32 @@ UCLA B.S. in Computer Science
 	
 \begin{resumeSubsection}{Scalable Far Memory: Balancing Faults and Evictions}
 	{August 2023 - August 2025}{}{}
+\item Adapted the Linux Kernel to create a far-memory system capable of offloading 
+	excess application memory to arbitrary storage backends, for cluster-wide
+	memory utilization improvements. 
+	Unlike prior work, this system scales to highly threaded, memory-intensive
+	applications with minimal (near-ideal) application slowdown. 
+	Results are applicable to tiered memory systems and all far-memory backends
+	(eg. NVMe, zswap, and RDMA). 
+\item Rearchitected the Linux memory management subsystems to handle high-throughput
+	page faulting and eviction. System achieves \textgreater 200 Gib/s page migration
+	throughput with only two CPU cores. 
+\item Extensive low-level performance work around the OS-CPU interface, 
+	extending well into microarchitectural details. Gained expertise in:
+	x86 IPI overheads and queuing characteristics; 
+	IOTLB-related virtualization overheads; 
+	TLB and page-walker coherence on x86; 
+	RDMA NIC control path throughput bottlenecks due to driver bugs; 
+	hypervisor-mediated IPI delivery costs; 
+	and lockless programming within the kernel. 
+\item Developed principles for scalable memory migration. 
+	Results generalize to a Library-OS based re-implementation. 
 \item Co-first author. Paper to appear at \textbf{SOSP 2025}. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{GRU4RecBE: Session Based Recommendations with Features}
 	{March 2021 - June 2021}{}{}
-\item Developed session-based recommendation system in \emph{PyTorch} which
+\item Developed session-based recommendation system in PyTorch which
 	extends the GRU4REC architecture with rich item features extracted from
 	the pre-trained BERT architecture. Non-attentive model outperforms
 	state-of-the-art session-based models over the MovieLens benchmark datasets.
