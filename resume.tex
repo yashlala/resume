@@ -31,105 +31,36 @@
 
 \begin{resumeSection}{Overview}
 
-I'm a third-year PhD student at Yale, broadly interested in systems for
-efficient data-center scale computing. 
-My recent work focuses on far-memory systems. 
 
-I have 4+ years of kernel programming expertise, including large-scale projects
-such as reimplementing the memory-management subsystem in my
-most recent publication (SOSP '25). 
-I have demonstrated expertise in developing high-throughput, low-latency kernel datapaths ---
-such as a Linux-based system capable of migrating 200 Gib/s of memory at
-\textless 270 ns per page per core. 
-I'm deeply familiar with CPU microarchitecture and its interactions with the OS, 
-and I excel in principled, data-driven, bottleneck analyses. 
 
-I'm currently expanding my research area towards cluster-scale optimizations,
-especially for AI/ML systems. 
-NVIDIA gave me experience with ML workloads; I spent a summer developing network
-performance models for these workloads and optimizing MoE communication
-libraries for GPU clusters. 
-The resulting insights have spurred my new set of projects focusing on
-system optimizations at large scales (intra-cluster failure recovery)
-and small scales (faster embedding similarity searches within GPUs). 
+
+I'm a fourth-year PhD student at Yale, broadly interested in systems for efficient data-center scale computing. 
+My research projects are generally themed around tradeoffs between memory capacity/bandwidth requirements and application performance. 
+I approach these problems from a few different angles. 
+
+My primary specialty is in low-level operating systems and network stack optimization (via RDMA-based far memory systems on the CPU side, and MoE network performance modelling on the GPU side). 
+I have 5+ years of kernel programming expertise, including large-scale projects such as reimplementing the memory-management subsystem in my most recent publication (SOSP '25). 
+I have demonstrated expertise in developing high-throughput, low-latency kernel datapaths --- such as a Linux-based system capable of migrating 200 Gib/s of memory at \textless 270 ns per page per core.
+I'm deeply familiar with CPU microarchitecture and its interactions with the OS, and excel in principled, data-driven, bottleneck analyses. 
+
+Recently, I've also been tackling these problems from a high-level algorithm design/theory perspective.  
+I feel that expertise in both worlds is necessary for effective algorithm-system codesign. 
+I'm currently developing compact data structures for efficient nearest-neighbor queries in high-dimensional vector spaces. 
+This project aims to accelerate RAG applications by marrying theory and practice: we provide formally proven runtime bounds, while maintaining strong empirical performance over billions of compressed RAG embeddings. 
 
 \end{resumeSection}
 
 \begin{resumeSection}{Education}
 
-Yale Ph.D. in Computer Science\hfill 2023 - Present \\
-UCLA B.S. in Computer Science\hfill GPA: 3.782, 2018 - 2022
+Yale Ph.D. in Computer Science\hfill Ongoing \\
+UCLA B.S. in Computer Science\hfill GPA: 3.782
 
 \end{resumeSection}
-
-\begin{resumeSection}{Professional Experience}
-
-\begin{resumeSubsection}{NOVA Lab, Yale CS Department}
-	{Aug 2023 - Expected 2028}{PhD Student}{Advisor: Anurag Khandelwal}
-\item Broadly researching systems for efficient data-center scale computing.
-	Recent work focuses on far-memory systems.
-\item Developed techniques for accelerating OS memory migration, aimed towards
-	facilitating high-throughput RDMA-based far memory runtimes.
-	Developed extensive knowledge of the the Linux kernel's memory
-	management, RDMA, page placement, IPI, and swap subsystems.
-	My particular focus was on optimizing high throughput, low-latency runtimes,
-	such as memory migration systems and RDMA SmartNIC network stacks.
-	Publication to appear at \textbf{SOSP '25}. 
-\item Developing compact data structures for efficient range queries in
-	high-dimensional spaces. Ongoing project. 
-\end{resumeSubsection}
-
-\begin{resumeSubsection}{NVIDIA}
-	{May 2025 - Aug 2025}{Systems Software Intern}{Supervisor: Misha Smelyanskiy}
-\item Developed performance models for Mixture-of-Experts (MoE)
-	communication phases for AI/ML models on NVIDIA's GB200 cluster hardware. 
-	Estimated ROI for future communication optimizations, and localized
-	network performance bottlenecks in distributed systems of GPUs. 
-\item Examined MoE token to expert mapping distributions to quantify the workload changes
-	required for optimal hardware utilization. Explored algorithm-network codesign opportunities. 
-\item Profiled existing GPU MoE library implementations (such as NCCL, DeepEP, etc).
-	Optimized GPU MoE libraries for NVIDIA hardware by better utilizing tiered
-	Multi-Node NVLink and Infiniband datacenter networks. 
-\item Gained experience with LLM workload network traffic patterns and 
-	GPU performance debugging (particularly in GPU-initiated RDMA
-	network communication). 
-\end{resumeSubsection}
-
-\begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
-	{Sept 2021 - Sept 2022}{Student Researcher}{Supervisor: Harry Xu}
-\item Developed Linux kernel mechanisms for transparent far memory, 
-	with the goal of merging my changes upstream. 
-	The patchset extends the cpuset controller to allow per-cgroup control of
-	active swap devices. The associated refactoring has positive implications
-	for swap throughput, and makes it easy to manage frontswap-based remote
-	memory systems. \\
-	Patchset available at
-	\href{https://github.com/yashlala/canvas-linux}{github.com/yashlala/canvas-linux}.
-\item Developed a patchset to improve the Linux kernel's physical page
-	allocation tail latencies by refilling the percpu low-order free page lists
-	asynchronously using RCU. 
-\end{resumeSubsection}
-
-\begin{resumeSubsection}{CSSI Program, UCLA CS Department}
-	{July 2022}{Tutor Undergrad (TA)}{}
-\item Taught introductory data science to high school students. 
-	Led discussion sections, prepared assignments, graded papers, and advised students. 
-\end{resumeSubsection}
-
-\begin{resumeSubsection}{Veritas Technologies LLC}
-	{June 2021 - Sept 2021}{SDE Intern}{}
-\item Worked on NetBackup Flex, a platform for large-scale data consolidation and backup. 
-	Implemented automatic node discovery and cluster assimilation over datacenter networks. 
-	Primarily worked with Ansible, Docker, and various glue languages. 
-\end{resumeSubsection}
-
-\end{resumeSection}
-
 
 \begin{resumeSection}{Publications}
 	
 \begin{resumeSubsection}{Scalable Far Memory: Balancing Faults and Evictions}
-	{August 2023 - August 2025}{}{}
+	{August 2023 - August 2025}{\href{https://dl.acm.org/doi/10.1145/3731569.3764842}{31st Symposium for Operating Systems Principles, (SOSP 2025)}}{}
 \item Adapted the Linux Kernel to create a far-memory system capable of offloading 
 	excess application memory to arbitrary storage backends, for cluster-wide
 	memory utilization improvements. 
@@ -150,24 +81,90 @@ UCLA B.S. in Computer Science\hfill GPA: 3.782, 2018 - 2022
 	and lockless programming within the kernel. 
 \item Developed principles for scalable memory migration. 
 	Results generalize to a Library-OS based re-implementation. 
-\item Co-first author. Paper to appear at \textbf{SOSP 2025}. 
+\item Co-first author. 
 \end{resumeSubsection}
 
 \begin{resumeSubsection}{GRU4RecBE: Session Based Recommendations with Features}
-	{March 2021 - June 2021}{}{}
+	{2022}
+	{\href{https://ojs.aaai.org/index.php/AAAI/article/view/21651/21400}{AAAI-22 Student Track}}
+	{}{}
 \item Developed session-based recommendation system in PyTorch which
 	extends the GRU4REC architecture with rich item features extracted from
 	the pre-trained BERT architecture. Non-attentive model outperforms
 	state-of-the-art session-based models over the MovieLens benchmark datasets.
-	\href{https://ojs.aaai.org/index.php/AAAI/article/view/21651/21400}{Paper}
-	\textbf{accepted to AAAI Student track}.
 \end{resumeSubsection}
 
 \end{resumeSection}
 
+\begin{resumeSection}{Professional Experience}
+
+\begin{resumeSubsection}{NOVA Lab, Yale CS Department}
+	{}{PhD Student}{Advisor: Anurag Khandelwal}
+\item Broadly researching systems for efficient data-center scale computing.
+	Recent work focuses on far-memory systems.
+\item Developed techniques for accelerating OS memory migration, aimed towards
+	facilitating high-throughput RDMA-based far memory runtimes.
+	Developed extensive knowledge of the the Linux kernel's memory
+	management, RDMA, page placement, IPI, and swap subsystems.
+	My particular focus was on optimizing high throughput, low-latency runtimes,
+	such as memory migration systems and RDMA SmartNIC network stacks.
+	Published in \textbf{SOSP '25}. 
+\item Developing compact data structures for efficient range queries in
+	high-dimensional vector spaces. Project is intended to accelerate
+	floating-point vector databases for Retrieval-Augmented Generation (RAG)
+	applications. Paper under submission. 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{NVIDIA}
+	{}{Systems Software Intern}{Supervisor: Misha Smelyanskiy}
+\item Developed performance models for Mixture-of-Experts (MoE)
+	communication phases for AI/ML models on NVIDIA's GB200 cluster hardware. 
+	Estimated ROI for future communication optimizations, and localized
+	network performance bottlenecks in distributed systems of GPUs. 
+\item Examined MoE token to expert mapping distributions to quantify the workload changes
+	required for optimal hardware utilization. Explored algorithm-network codesign opportunities. 
+\item Profiled existing GPU MoE library implementations (such as NCCL, DeepEP, etc).
+	Optimized GPU MoE libraries for NVIDIA hardware by better utilizing tiered
+	Multi-Node NVLink and Infiniband datacenter networks. 
+\item Gained experience with LLM workload network traffic patterns and 
+	GPU performance debugging (particularly in GPU-initiated RDMA
+	network communication). 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{SOLAR Lab, UCLA CS Department} 
+	{}{Student Researcher}{Supervisor: Harry Xu}
+\item Developed Linux kernel mechanisms for transparent far memory, 
+	with the goal of merging my changes upstream. 
+	The patchset extends the cpuset controller to allow per-cgroup control of
+	active swap devices. The associated refactoring has positive implications
+	for swap throughput, and makes it easy to manage frontswap-based remote
+	memory systems. \\
+	Patchset available at
+	\href{https://github.com/yashlala/canvas-linux}{github.com/yashlala/canvas-linux}.
+\item Developed a patchset to improve the Linux kernel's physical page
+	allocation tail latencies by refilling the percpu low-order free page lists
+	asynchronously using RCU. 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{CSSI Program, UCLA CS Department}
+	{}{Tutor Undergrad (TA)}{}
+\item Taught introductory data science to high school students. 
+	Led discussion sections, prepared assignments, graded papers, and advised students. 
+\end{resumeSubsection}
+
+\begin{resumeSubsection}{Veritas Technologies LLC}
+	{}{SDE Intern}{}
+\item Worked on NetBackup Flex, a platform for large-scale data consolidation and backup. 
+	Implemented automatic node discovery and cluster assimilation over datacenter networks. 
+	Primarily worked with Ansible, Docker, and various glue languages. 
+\end{resumeSubsection}
+
+\end{resumeSection}
+
+
 \begin{resumeSection}{Projects}
 
-\begin{resumeSubsection}{NDN Multicast}{Feb 2022 - June 2022}{}{}
+\begin{resumeSubsection}{NDN Multicast}{}{}{}
 \item Extended routing protocols for NDN (Named Data Network) under Lixia Zhang. 
 	Extended NLSR (a link-state routing algorithm for NDN) to allow for
 	efficient multicast delivery of NDN Interest packets. 
